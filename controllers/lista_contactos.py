@@ -11,7 +11,8 @@ class ListaContactos:
             conn = sqlite3.connect('sql/agenda.db')
             cursor = conn.cursor()
             # Consulta los registros de la tabla contactos
-            cursor.execute("SELECT * FROM contactos;")            
+            query = "SELECT * FROM contactos;"
+            cursor.execute(query)
             # Crea un array vacio para almacenar los registros
             contactos = []
             # Almacena cada registro en un diccionario
@@ -26,7 +27,7 @@ class ListaContactos:
                 }
                 # Agrega el diccionario creado al array
                 contactos.append(contacto)
-        
+
             # Cierra la conexión a la base de datos
             conn.close()
 
@@ -42,5 +43,6 @@ class ListaContactos:
 
 
     def GET(self):
-        print(self.obtenerContactos())
-        return render.lista_contactos()
+        contactos = self.obtenerContactos()
+        print(contactos)
+        return render.lista_contactos(contactos)
