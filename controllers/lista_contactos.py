@@ -44,5 +44,5 @@ class ListaContactos:
 
     def GET(self):
         contactos = self.obtenerContactos()
-        print(contactos)
+        # print(contactos)
         return render.lista_contactos(contactos)
