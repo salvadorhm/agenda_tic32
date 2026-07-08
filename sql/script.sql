@@ -13,3 +13,4 @@ VALUES
 ('John','Carter','Earth','john@email.com','22222222');
 
 SELECT * FROM contactos;
+
