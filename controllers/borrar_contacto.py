@@ -40,4 +40,4 @@ class BorrarContacto:
         contacto =  self.buscarContacto(id_contacto)
         print(contacto)
 
-        return render.borrar_contacto(contacto)
+        return render.borrar_contacto(contacto) # type: ignore
